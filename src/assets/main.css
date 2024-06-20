@@ -5,6 +5,9 @@
 @layer base {
   body {
     font-family: 'Poppins';
-    backgound-color: black;
   }
 }
+
+/* body {
+  cursor: url(‘YourCursorImage.png'), auto;
+} */
