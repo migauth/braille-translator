@@ -5,14 +5,7 @@ const searchTerm = reactive({
   query: ''
 })
 
-// function data() {
-//   return {
-//     inputText: '',
-//     brailleOutput: ''
-//   }
-// }
-
-function textToBraille(text) {
+const textToBraille = (text) => {
   const brailleDict = {
     a: '⠁',
     b: '⠃',
@@ -65,15 +58,11 @@ function textToBraille(text) {
     .map((char) => brailleDict[char.toLowerCase()] || char)
     .join('')
 }
-
-// function translateText(f) {
-//   f.brailleOutput = this.textToBraille(this.inputText)
-// }
 </script>
 
 <template>
   <div>
-    <form>
+    <form @submit.prevent>
       <div class="">
         <input
           type="text"
