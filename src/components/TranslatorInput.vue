@@ -75,7 +75,7 @@ const buttonClass = computed(() => {
 
 <template>
   <div>
-    <div class="border flex">
+    <div class="flex">
       <form @submit.prevent>
         <div>
           <input
@@ -87,7 +87,11 @@ const buttonClass = computed(() => {
           />
         </div>
       </form>
-      <button :class="buttonClass" class="border-none text-4xl" @click="clearInput">
+      <button
+        :class="buttonClass"
+        class="border-none text-4xl hover:animate-jump"
+        @click="clearInput"
+      >
         <i class="fa-solid fa-delete-left" />
       </button>
     </div>

@@ -51,25 +51,25 @@ const yellowAndBlack = () =>
   <div class="w-full flex flex-col gap-4 md:flex-row">
     <button
       @click="blackAndWhite"
-      class="border border-black text-black bg-white rounded-md p-2 text-2xl"
+      class="border border-black text-black bg-white rounded-md p-2 text-2xl hover:animate-jump"
     >
       Change color
     </button>
     <button
       @click="whiteAndBlack"
-      class="border border-white text-white bg-black rounded-md p-2 text-2xl"
+      class="border border-white text-white bg-black rounded-md p-2 text-2xl hover:animate-jump"
     >
       Change color
     </button>
     <button
       @click="greenAndBlack"
-      class="border border-green-400 text-green-400 bg-black rounded-md p-2 text-2xl"
+      class="border border-green-400 text-green-400 bg-black rounded-md p-2 text-2xl hover:animate-jump"
     >
       Change color
     </button>
     <button
       @click="yellowAndBlack"
-      class="border border-yellow-300 text-yellow-300 bg-black rounded-md p-2 text-2xl"
+      class="border border-yellow-300 text-yellow-300 bg-black rounded-md p-2 text-2xl hover:animate-jump"
     >
       Change color
     </button>
