@@ -1,5 +1,6 @@
 <script setup>
-import { reactive } from 'vue'
+import { computed, reactive } from 'vue'
+import { inputStyles } from '@/state'
 
 const searchTerm = reactive({
   query: ''
@@ -58,18 +59,17 @@ const textToBraille = (text) => {
     .map((char) => brailleDict[char.toLowerCase()] || char)
     .join('')
 }
+
+const inputClass = computed(() => {
+  return `${inputStyles.value.width} ${inputStyles.value.border} ${inputStyles.value.background} ${inputStyles.value.rounded} ${inputStyles.value.placeholder} ${inputStyles.value.text} ${inputStyles.value.padding}`
+})
 </script>
 
 <template>
   <div>
     <form @submit.prevent>
       <div class="">
-        <input
-          type="text"
-          placeholder="Type here"
-          class="w-fit border-8 border-dashed border-white bg-black rounded-md placeholder-yellow-300 text-4xl p-6"
-          v-model="searchTerm.query"
-        />
+        <input type="text" placeholder="Type here" :class="inputClass" v-model="searchTerm.query" />
       </div>
     </form>
     <div class="w-fit placeholder-yellow-300 text-4xl p-6">
