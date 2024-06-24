@@ -1,10 +1,14 @@
 <script setup>
 import { computed, reactive } from 'vue'
-import { inputStyles } from '@/state'
+import { inputStyles, siteStyles } from '@/state'
 
 const searchTerm = reactive({
   query: ''
 })
+
+const clearInput = () => {
+  searchTerm.query = ''
+}
 
 const textToBraille = (text) => {
   const brailleDict = {
@@ -63,16 +67,31 @@ const textToBraille = (text) => {
 const inputClass = computed(() => {
   return `${inputStyles.value.width} ${inputStyles.value.border} ${inputStyles.value.background} ${inputStyles.value.rounded} ${inputStyles.value.placeholder} ${inputStyles.value.text} ${inputStyles.value.padding}`
 })
+
+const buttonClass = computed(() => {
+  return `${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.text} ${siteStyles.value.padding}`
+})
 </script>
 
 <template>
   <div>
-    <form @submit.prevent>
-      <div class="">
-        <input type="text" placeholder="Type here" :class="inputClass" v-model="searchTerm.query" />
-      </div>
-    </form>
-    <div class="w-fit placeholder-yellow-300 text-4xl p-6">
+    <div class="border flex">
+      <form @submit.prevent>
+        <div>
+          <input
+            id="textInput"
+            type="text"
+            placeholder="Type here"
+            :class="inputClass"
+            v-model="searchTerm.query"
+          />
+        </div>
+      </form>
+      <button :class="buttonClass" class="border-none text-4xl" @click="clearInput">
+        <i class="fa-solid fa-delete-left" />
+      </button>
+    </div>
+    <div class="w-full text-4xl p-6 overflow-auto break-words">
       {{ textToBraille(searchTerm.query) }}
     </div>
   </div>
