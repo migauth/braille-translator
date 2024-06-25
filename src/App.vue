@@ -9,10 +9,15 @@ const siteClass = computed(() => {
 })
 
 const showColorOptions = ref(false)
+const showHeader = ref(false)
 const isTyping = ref(false)
 
 const toggleColorOptions = () => {
   showColorOptions.value = !showColorOptions.value
+}
+
+const toggleHeader = () => {
+  showHeader.value = !showHeader.value
 }
 
 const handleQueryUpdate = (query) => {
@@ -31,9 +36,16 @@ const buttonClass = computed(() => {
       <button
         @click="toggleColorOptions"
         :class="buttonClass"
-        class="border border-black text-black rounded-md p-2 text-2xl mb-3"
+        class="border border-black text-black rounded-md p-2 text-2xl mb-3 mr-3"
       >
         <i class="fa-solid fa-caret-down" /> Color Options
+      </button>
+      <button
+        @click="toggleHeader"
+        :class="buttonClass"
+        class="border border-black text-black rounded-md p-2 text-2xl mb-3"
+      >
+        <i class="fa-solid fa-caret-down" /> Toggle Welcome
       </button>
     </div>
     <!-- Colour buttons -->
@@ -42,7 +54,7 @@ const buttonClass = computed(() => {
     </div>
     <!-- Title -->
     <h1
-      v-if="!isTyping"
+      v-if="!showHeader"
       class="text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 animate-fade-down mb-3"
     >
       Welcome to Simple Braille Translator
