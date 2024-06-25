@@ -1,9 +1,15 @@
 <script setup>
-import { computed, reactive } from 'vue'
+import { computed, reactive, watch, defineEmits } from 'vue'
 import { inputStyles, siteStyles } from '@/state'
 
 const searchTerm = reactive({
   query: ''
+})
+
+const emit = defineEmits(['update:query'])
+
+watch(searchTerm, (newVal) => {
+  emit('update:query', newVal.query)
 })
 
 const clearInput = () => {
@@ -95,7 +101,12 @@ const buttonClass = computed(() => {
         <i class="fa-solid fa-delete-left" />
       </button>
     </div>
-    <div class="w-full text-4xl p-6 overflow-auto break-words">
+    <div class="w-full text-6xl p-6 overflow-auto break-words">
+      <!-- <div v-if="textToBraille.length === 0">
+        <p>hi</p>
+        text will appear here
+      </div> -->
+      <!-- {{ textToBraille.length }} -->
       {{ textToBraille(searchTerm.query) }}
     </div>
   </div>

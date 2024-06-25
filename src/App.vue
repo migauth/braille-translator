@@ -9,9 +9,14 @@ const siteClass = computed(() => {
 })
 
 const showColorOptions = ref(false)
+const isTyping = ref(false)
 
 const toggleColorOptions = () => {
   showColorOptions.value = !showColorOptions.value
+}
+
+const handleQueryUpdate = (query) => {
+  isTyping.value = query.length > 0
 }
 
 const buttonClass = computed(() => {
@@ -35,12 +40,16 @@ const buttonClass = computed(() => {
     <div v-if="showColorOptions" class="z-10 flex p-0 mb-4 animate-flip-down">
       <StyleButton></StyleButton>
     </div>
-    <h1 class="text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4">
+    <!-- Title -->
+    <h1
+      v-if="!isTyping"
+      class="text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 animate-fade-down"
+    >
       Welcome to Simple Braille Translator
     </h1>
     <!-- Translator -->
     <div class="w-3/4 h-fit">
-      <TranslatorInput></TranslatorInput>
+      <TranslatorInput @update:query="handleQueryUpdate"></TranslatorInput>
     </div>
   </main>
 </template>
