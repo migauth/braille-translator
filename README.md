@@ -2,6 +2,10 @@
 
 !["screenshot"](https://github.com/migauth/braille-translator/blob/main/public/screenshot2.png?raw=true)
 
+## Six colour options for vision accessability needs
+
+!["colours"](https://github.com/migauth/braille-translator/blob/main/public/colours.png?raw=true)
+
 ## Stack
 
 Vue, JavaScript, Tailwind
