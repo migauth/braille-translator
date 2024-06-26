@@ -1,6 +1,6 @@
 # Simple braille translator
 
-!["screenshot"](https://github.com/migauth/braille-translator/blob/main/public/screenshot.png?raw=true)
+!["screenshot"](https://github.com/migauth/braille-translator/blob/main/public/screenshot2.png?raw=true)
 
 ## Stack
 
