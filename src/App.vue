@@ -1,5 +1,5 @@
 <script setup>
-import TranslatorInput from './components/TranslatorInput.vue'
+import TranslatorInputOutput from './components/TranslatorInputOutput.vue'
 import StyleButton from './components/StyleButton.vue'
 import { siteStyles } from './state.js'
 import { computed, ref } from 'vue'
@@ -61,7 +61,7 @@ const buttonClass = computed(() => {
     </h1>
     <!-- Translator -->
     <div class="w-3/4 h-fit">
-      <TranslatorInput @update:query="handleQueryUpdate"></TranslatorInput>
+      <TranslatorInputOutput @update:query="handleQueryUpdate" />
     </div>
   </main>
 </template>
