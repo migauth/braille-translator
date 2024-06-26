@@ -1,31 +1,35 @@
-# A simple braille translator
+# Simple braille translator
 
 Made with Vue.js and tailwind.
 
-## Dependancies
+## Stack
 
-install font-awesome and tailwind css animated
+Vue, JavaScript, Tailwind
 
-## Project Setup (notes provided from vue setup)
+install font-awesome and
+
+## Install dependencies
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+Follow instructions on [Tailwind website](https://tailwindcss.com/docs/guides/vite) for tailwind installation with Vue
+
+Font awesome
+
+```sh
+npm install @fortawesome/fontawesome-free
+```
+
+Tailwind css animated
+
+```sh
+npm i tailwindcss-animated
+```
+
+### Run Server
 
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
