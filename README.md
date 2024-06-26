@@ -1,12 +1,8 @@
 # Simple braille translator
 
-Made with Vue.js and tailwind.
-
 ## Stack
 
 Vue, JavaScript, Tailwind
-
-install font-awesome and
 
 ## Install dependencies
 
