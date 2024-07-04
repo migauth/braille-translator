@@ -80,10 +80,10 @@ const buttonClass = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="border w-full sm:w-3/4">
     <div class="flex">
       <form @submit.prevent>
-        <div>
+        <div class="w-full">
           <input
             id="textInput"
             type="text"
@@ -95,13 +95,13 @@ const buttonClass = computed(() => {
       </form>
       <button
         :class="buttonClass"
-        class="border-none text-4xl hover:animate-jump"
+        class="border-none text-2xl sm:text-4xl hover:animate-jump"
         @click="clearInput"
       >
         <i class="fa-solid fa-delete-left" />
       </button>
     </div>
-    <div class="w-full text-6xl p-6 overflow-auto break-words">
+    <div class="w-full text-3xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
       <!-- <div v-if="textToBraille.length === 0">
         <p>hi</p>
         text will appear here

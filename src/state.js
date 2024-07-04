@@ -10,11 +10,11 @@ export const siteStyles = ref({
 })
 
 export const inputStyles = ref({
-  width: 'w-fit',
+  width: 'w-full sm:w-3/4',
   border: 'border-8 border-dashed border-yellow-300',
   background: 'bg-black',
   rounded: 'rounded-md',
   placeholder: 'placeholder-yellow-300',
-  text: 'text-4xl',
-  padding: 'p-6'
+  text: 'text-xl sm:text-4xl',
+  padding: 'p-2 sm:p-6'
 })

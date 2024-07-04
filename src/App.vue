@@ -32,24 +32,24 @@ const buttonClass = computed(() => {
 <template>
   <main :class="siteClass">
     <!-- Toggle Button -->
-    <div>
+    <div class="flex flex-wrap">
       <button
         @click="toggleColorOptions"
         :class="buttonClass"
-        class="border border-black text-black rounded-md p-2 text-2xl mb-3 mr-3"
+        class="border border-black text-black rounded-md p-2 text-lg sm:text-2xl mb-3 mr-3"
       >
         <i class="fa-solid fa-caret-down" /> Color Options
       </button>
       <button
         @click="toggleHeader"
         :class="buttonClass"
-        class="border border-black text-black rounded-md p-2 text-2xl mb-3"
+        class="border border-black text-black rounded-md p-2 text-lg sm:text-2xl mb-3"
       >
         <i class="fa-solid fa-caret-down" /> Toggle Welcome
       </button>
     </div>
     <!-- Colour buttons -->
-    <div v-if="showColorOptions" class="z-10 flex p-0 mb-4 animate-flip-down">
+    <div v-if="showColorOptions" class="z-10 flex flex-wrap p-0 mb-4 animate-flip-down">
       <StyleButton></StyleButton>
     </div>
     <!-- Title -->
@@ -60,7 +60,7 @@ const buttonClass = computed(() => {
       Welcome to Simple Braille Translator
     </h1>
     <!-- Translator -->
-    <div class="w-3/4 h-fit">
+    <div class="w-full sm:w-3/4">
       <TranslatorInputOutput @update:query="handleQueryUpdate" />
     </div>
   </main>
