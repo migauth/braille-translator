@@ -80,7 +80,7 @@ const buttonClass = computed(() => {
 </script>
 
 <template>
-  <div class="border w-full sm:w-3/4">
+  <div class="w-full sm:w-3/4">
     <div class="flex">
       <form @submit.prevent>
         <div class="w-full">
