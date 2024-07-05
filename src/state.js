@@ -15,6 +15,6 @@ export const inputStyles = ref({
   background: 'bg-black',
   rounded: 'rounded-md',
   placeholder: 'placeholder-yellow-300',
-  text: 'text-xl sm:text-4xl',
+  text: 'text-4xl sm:text-4xl',
   padding: 'p-2 sm:p-6'
 })

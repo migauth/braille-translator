@@ -64,9 +64,19 @@ const textToBraille = (text) => {
     9: '⠼⠊',
     0: '⠼⠚'
   }
+
+  // Dot 6 for capitals
+  const dot6 = '⠠'
+
   return text
     .split('')
-    .map((char) => brailleDict[char.toLowerCase()] || char)
+    .map((char) => {
+      if (char >= 'A' && char <= 'Z') {
+        return dot6 + (brailleDict[char.toLowerCase()] || char)
+      } else {
+        return brailleDict[char] || char
+      }
+    })
     .join('')
 }
 
@@ -101,7 +111,7 @@ const buttonClass = computed(() => {
         <i class="fa-solid fa-delete-left" />
       </button>
     </div>
-    <div class="w-full text-3xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
+    <div class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
       <!-- <div v-if="textToBraille.length === 0">
         <p>hi</p>
         text will appear here

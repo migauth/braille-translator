@@ -36,14 +36,14 @@ const buttonClass = computed(() => {
       <button
         @click="toggleColorOptions"
         :class="buttonClass"
-        class="border border-black text-black rounded-md p-2 text-lg sm:text-2xl mb-3 mr-3"
+        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 sm:mr-3 w-full sm:w-auto"
       >
         <i class="fa-solid fa-caret-down" /> Color Options
       </button>
       <button
         @click="toggleHeader"
         :class="buttonClass"
-        class="border border-black text-black rounded-md p-2 text-lg sm:text-2xl mb-3"
+        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 w-full sm:w-auto"
       >
         <i class="fa-solid fa-caret-down" /> Toggle Welcome
       </button>
