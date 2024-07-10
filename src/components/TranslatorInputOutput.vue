@@ -18,52 +18,24 @@ const clearInput = () => {
 
 const textToBraille = (text) => {
   const brailleDict = {
-    a: '⠁',
-    b: '⠃',
-    c: '⠉',
-    d: '⠙',
-    e: '⠑',
-    f: '⠋',
-    g: '⠛',
-    h: '⠓',
-    i: '⠊',
-    j: '⠚',
-    k: '⠅',
-    l: '⠇',
-    m: '⠍',
-    n: '⠝',
-    o: '⠕',
-    p: '⠏',
-    q: '⠟',
-    r: '⠗',
-    s: '⠎',
-    t: '⠞',
-    u: '⠥',
-    v: '⠧',
-    w: '⠺',
-    x: '⠭',
-    y: '⠽',
+    // Letters
+    a: '⠁', b: '⠃', c: '⠉', d: '⠙', e: '⠑',
+    f: '⠋', g: '⠛', h: '⠓', i: '⠊', j: '⠚',
+    k: '⠅', l: '⠇', m: '⠍', n: '⠝', o: '⠕',
+    p: '⠏', q: '⠟', r: '⠗', s: '⠎', t: '⠞',
+    u: '⠥', v: '⠧', w: '⠺', x: '⠭', y: '⠽',
     z: '⠵',
-    ' ': ' ',
-    ',': '⠂',
-    '.': '⠲',
-    '?': '⠦',
-    '!': '⠖',
-    ';': '⠆',
-    ':': '⠒',
-    '-': '⠤',
-    "'": '⠄',
-    1: '⠼⠁',
-    2: '⠼⠃',
-    3: '⠼⠉',
-    4: '⠼⠙',
-    5: '⠼⠑',
-    6: '⠼⠋',
-    7: '⠼⠛',
-    8: '⠼⠓',
-    9: '⠼⠊',
-    0: '⠼⠚'
-  }
+    // Numbers
+    1: '⠼⠁', 2: '⠼⠃', 3: '⠼⠉', 4: '⠼⠙', 5: '⠼⠑',
+    6: '⠼⠋', 7: '⠼⠛', 8: '⠼⠓', 9: '⠼⠊', 0: '⠼⠚',
+    // Symbols
+    ' ': ' ', ',': '⠂', '.': '⠲', '?': '⠦',
+    '!': '⠖', ';': '⠆', ':': '⠒', '-': '⠤', "'": '⠄',
+    '@': '⠈⠁', '$': '⠈⠎', '#': '⠼', '%': '⠨⠴', '&': '⠈⠯',
+    '*': '⠈⠔', '+': '⠬', '/': '⠸⠌', '<': '⠐⠣', '=': '⠐⠶',
+    '>': '⠐⠜', '(': '⠐⠣', ')': '⠐⠜', '[': '⠸⠣', ']': '⠸⠜',
+    '{': '⠸⠹', '}': '⠸⠻', '~': '⠈⠢', '_': '⠈⠤', '^': '⠈⠡'
+  };
 
   // Dot 6 for capitals
   const dot6 = '⠠'
@@ -94,20 +66,10 @@ const buttonClass = computed(() => {
     <div class="flex">
       <form @submit.prevent>
         <div class="w-full">
-          <input
-            id="textInput"
-            type="text"
-            placeholder="Type here"
-            :class="inputClass"
-            v-model="searchTerm.query"
-          />
+          <input id="textInput" type="text" placeholder="Type here" :class="inputClass" v-model="searchTerm.query" />
         </div>
       </form>
-      <button
-        :class="buttonClass"
-        class="border-none text-2xl sm:text-4xl hover:animate-jump"
-        @click="clearInput"
-      >
+      <button :class="buttonClass" class="border-none text-2xl sm:text-4xl hover:animate-jump" @click="clearInput">
         <i class="fa-solid fa-delete-left" />
       </button>
     </div>
