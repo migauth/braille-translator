@@ -16,16 +16,26 @@ const clearInput = () => {
   searchTerm.query = ''
 }
 
+const countOccurances = (arr, val) => {
+  return arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
+}
+
 const textToBraille = (text) => {
   const brailleDict = {
+
+    //abcs
     a: '⠁', b: '⠃', c: '⠉', d: '⠙', e: '⠑',
     f: '⠋', g: '⠛', h: '⠓', i: '⠊', j: '⠚',
     k: '⠅', l: '⠇', m: '⠍', n: '⠝', o: '⠕',
     p: '⠏', q: '⠟', r: '⠗', s: '⠎', t: '⠞',
     u: '⠥', v: '⠧', w: '⠺', x: '⠭', y: '⠽',
     z: '⠵',
+
+    //numebers
     1: '⠼⠁', 2: '⠼⠃', 3: '⠼⠉', 4: '⠼⠙', 5: '⠼⠑',
     6: '⠼⠋', 7: '⠼⠛', 8: '⠼⠓', 9: '⠼⠊', 0: '⠼⠚',
+
+    //symbols
     ' ': ' ', ',': '⠂', '.': '⠲', '?': '⠦',
     '!': '⠖', ';': '⠆', ':': '⠒', '-': '⠤', "'": '⠄',
     '@': '⠈⠁', '$': '⠈⠎', '#': '⠼', '%': '⠨⠴', '&': '⠈⠯',
@@ -37,11 +47,33 @@ const textToBraille = (text) => {
   // Dot 6 for capitals
   const dot6 = '⠠'
 
+  // If both sides of the word or sentence has quotation marks, the symbols need to mirror
+
+  const innerDoubleQuote = '⠦'
+  const outerDoubleQuote = '⠴'
+
+  for (let i = 0; i < text.length; i++) {
+    const element = text[i];
+    console.log(element);
+  }
+
   return text
     .split('')
     .map((char) => {
       if (char >= 'A' && char <= 'Z') {
         return dot6 + (brailleDict[char.toLowerCase()] || char)
+      } else if (char === '"') {
+        // console.log(char.indexOf('"'));
+        let arr = []
+        for (let i = 0; i < text.length; i++) {
+          const element = text[i];
+          arr.push(element)
+          if (countOccurances(arr, '"') % 2 === 0) {
+            return outerDoubleQuote;
+          }
+        }
+
+        return innerDoubleQuote;
       } else {
         return brailleDict[char] || char
       }
@@ -71,11 +103,6 @@ const buttonClass = computed(() => {
       </button>
     </div>
     <div class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
-      <!-- <div v-if="textToBraille.length === 0">
-        <p>hi</p>
-        text will appear here
-      </div> -->
-      <!-- {{ textToBraille.length }} -->
       {{ textToBraille(searchTerm.query) }}
     </div>
   </div>
