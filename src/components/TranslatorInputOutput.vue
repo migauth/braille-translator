@@ -41,7 +41,8 @@ const textToBraille = (text) => {
     '@': '⠈⠁', '$': '⠈⠎', '#': '⠼', '%': '⠨⠴', '&': '⠈⠯',
     '*': '⠈⠔', '+': '⠬', '/': '⠸⠌', '<': '⠐⠣', '=': '⠐⠶',
     '>': '⠐⠜', '(': '⠐⠣', ')': '⠐⠜', '[': '⠸⠣', ']': '⠸⠜',
-    '{': '⠸⠹', '}': '⠸⠻', '~': '⠈⠢', '_': '⠈⠤', '^': '⠈⠡'
+    '{': '⠸⠹', '}': '⠸⠻', '~': '⠈⠢', '_': '⠈⠤', '^': '⠈⠡',
+    '"': '⠦'
   };
 
   // Dot 6 for capitals
@@ -49,34 +50,23 @@ const textToBraille = (text) => {
 
   // If both sides of the word or sentence has quotation marks, the symbols need to mirror
 
-  const innerDoubleQuote = '⠦'
+  // const innerDoubleQuote = '⠦'
   const outerDoubleQuote = '⠴'
 
-  for (let i = 0; i < text.length; i++) {
-    const element = text[i];
-    console.log(element);
-  }
+  //Use a toggle state for openiong and closing quote
+
+  console.log("whole input: ", text);
 
   return text
     .split('')
     .map((char) => {
       if (char >= 'A' && char <= 'Z') {
         return dot6 + (brailleDict[char.toLowerCase()] || char)
-      } else if (char === '"') {
-        // console.log(char.indexOf('"'));
-        let arr = []
-        for (let i = 0; i < text.length; i++) {
-          const element = text[i];
-          arr.push(element)
-          if (countOccurances(arr, '"') % 2 === 0) {
-            return outerDoubleQuote;
-          }
-        }
-
-        return innerDoubleQuote;
-      } else {
-        return brailleDict[char] || char
       }
+      if (char === '"' && countOccurances(text.split(''), '"') % 2 === 0) {
+        return outerDoubleQuote;
+      }
+      return brailleDict[char] || char
     })
     .join('')
 }
