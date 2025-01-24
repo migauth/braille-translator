@@ -33,18 +33,12 @@ const buttonClass = computed(() => {
   <main :class="siteClass">
     <!-- Toggle Button -->
     <div class="flex flex-wrap">
-      <button
-        @click="toggleColorOptions"
-        :class="buttonClass"
-        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 sm:mr-3 w-full sm:w-auto"
-      >
+      <button @click="toggleColorOptions" :class="buttonClass"
+        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 sm:mr-3 w-full sm:w-auto">
         <i class="fa-solid fa-caret-down" /> Color Options
       </button>
-      <button
-        @click="toggleHeader"
-        :class="buttonClass"
-        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 w-full sm:w-auto"
-      >
+      <button @click="toggleHeader" :class="buttonClass"
+        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 w-full sm:w-auto">
         <i class="fa-solid fa-caret-down" /> Toggle Welcome
       </button>
     </div>
@@ -53,10 +47,7 @@ const buttonClass = computed(() => {
       <StyleButton></StyleButton>
     </div>
     <!-- Title -->
-    <h1
-      v-if="!showHeader"
-      class="text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 animate-fade-down mb-3"
-    >
+    <h1 v-if="!showHeader" class="text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 animate-fade-down mb-3">
       Welcome to Simple Braille Translator
     </h1>
     <!-- Translator -->
