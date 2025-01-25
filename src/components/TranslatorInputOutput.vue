@@ -16,10 +16,6 @@ const clearInput = () => {
   searchTerm.query = ''
 }
 
-const countOccurances = (arr, val) => {
-  return arr.reduce((a, v) => (v === val ? a + 1 : a), 0)
-}
-
 const textToBraille = (text) => {
   const brailleDict = {
 
