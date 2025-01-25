@@ -41,19 +41,19 @@ const textToBraille = (text) => {
     '@': '⠈⠁', '$': '⠈⠎', '#': '⠼', '%': '⠨⠴', '&': '⠈⠯',
     '*': '⠈⠔', '+': '⠬', '/': '⠸⠌', '<': '⠐⠣', '=': '⠐⠶',
     '>': '⠐⠜', '(': '⠐⠣', ')': '⠐⠜', '[': '⠸⠣', ']': '⠸⠜',
-    '{': '⠸⠹', '}': '⠸⠻', '~': '⠈⠢', '_': '⠈⠤', '^': '⠈⠡',
-    '"': '⠦'
+    '{': '⠸⠹', '}': '⠸⠻', '~': '⠈⠢', '_': '⠈⠤', '^': '⠈⠡'
   };
+
+  // const innerDoubleQuote = '⠦'
+  const innerDoubleQuote = '⠦'
+  const outerDoubleQuote = '⠴'
 
   // Dot 6 for capitals
   const dot6 = '⠠'
 
-  // If both sides of the word or sentence has quotation marks, the symbols need to mirror
-
-  // const innerDoubleQuote = '⠦'
-  const outerDoubleQuote = '⠴'
-
   //Use a toggle state for openiong and closing quote
+
+  let isOpeningQuote = true;
 
   console.log("whole input: ", text);
 
@@ -63,8 +63,10 @@ const textToBraille = (text) => {
       if (char >= 'A' && char <= 'Z') {
         return dot6 + (brailleDict[char.toLowerCase()] || char)
       }
-      if (char === '"' && countOccurances(text.split(''), '"') % 2 === 0) {
-        return outerDoubleQuote;
+      if (char === '"') {
+        const quote = isOpeningQuote ? innerDoubleQuote : outerDoubleQuote
+        isOpeningQuote = !isOpeningQuote
+        return quote
       }
       return brailleDict[char] || char
     })
