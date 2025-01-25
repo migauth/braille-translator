@@ -10,6 +10,8 @@ const siteClass = computed(() => {
 
 const showColorOptions = ref(false)
 const showHeader = ref(false)
+const showTranslator = ref(false)
+const showDictionary = ref(false)
 const isTyping = ref(false)
 
 const toggleColorOptions = () => {
@@ -18,6 +20,12 @@ const toggleColorOptions = () => {
 
 const toggleHeader = () => {
   showHeader.value = !showHeader.value
+}
+
+const toggleDictionary = () => {
+  showHeader.value = !showHeader.value
+  showTranslator.value = !showTranslator.value
+  showDictionary.value = !showDictionary.value
 }
 
 const handleQueryUpdate = (query) => {
@@ -38,8 +46,12 @@ const buttonClass = computed(() => {
         <i class="fa-solid fa-caret-down" /> Color Options
       </button>
       <button @click="toggleHeader" :class="buttonClass"
-        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 w-full sm:w-auto">
+        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-3 w-full sm:w-auto">
         <i class="fa-solid fa-caret-down" /> Toggle Welcome
+      </button>
+      <button @click="toggleDictionary" :class="buttonClass"
+        class="rounded-md p-2 text-3xl sm:text-2xl mb-3 w-full sm:w-auto">
+        <i class="fa-solid fa-caret-down" /> Braille Dictionary
       </button>
     </div>
     <!-- Colour buttons -->
@@ -51,8 +63,22 @@ const buttonClass = computed(() => {
       Welcome to Simple Braille Translator
     </h1>
     <!-- Translator -->
-    <div class="w-full sm:w-3/4">
+    <div v-if="!showTranslator" class="w-full sm:w-3/4">
       <TranslatorInputOutput @update:query="handleQueryUpdate" />
+    </div>
+    <!-- Dictionary -->
+    <div v-if="showDictionary">
+      <p>Dictionary</p>
+      <p>Alphabet and Numbers</p>
+      <pre>
+1 2 3 4 5 6 7 8 9 0
+a b c d e f g h i j
+⠁ ⠃ ⠉ ⠙ ⠑ ⠋ ⠛ ⠓ ⠑ ⠚
+k l m n o p q r s t
+
+u v x y z w
+
+      </pre>
     </div>
   </main>
 </template>
