@@ -69,17 +69,85 @@ const buttonClass = computed(() => {
     </div>
     <!-- Dictionary -->
     <div v-if="showDictionary">
-      <p>Dictionary</p>
-      <p>Alphabet and Numbers</p>
-      <pre>
-1 2 3 4 5 6 7 8 9 0
-a b c d e f g h i j
-⠁ ⠃ ⠉ ⠙ ⠑ ⠋ ⠛ ⠓ ⠑ ⠚
-k l m n o p q r s t
+      <p class="text-3xl p-4">Dictionary</p>
+      <p class="p-4 text-2xl">Alphabet and Numbers</p>
+      <div class="grid grid-cols-10 gap-4 p-4 text-3xl ">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
 
-u v x y z w
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+        <div>j</div>
 
-      </pre>
+        <div>⠁</div>
+        <div>⠃</div>
+        <div>⠉</div>
+        <div>⠙</div>
+        <div>⠑</div>
+        <div>⠋</div>
+        <div>⠛</div>
+        <div>⠓</div>
+        <div>⠑</div>
+        <div>⠚</div>
+
+        <div>k</div>
+        <div>l</div>
+        <div>m</div>
+        <div>n</div>
+        <div>o</div>
+        <div>p</div>
+        <div>q</div>
+        <div>r</div>
+        <div>s</div>
+        <div>t</div>
+
+        <div>⠅</div>
+        <div>⠇</div>
+        <div>⠍</div>
+        <div>⠝</div>
+        <div>⠕</div>
+        <div>⠏</div>
+        <div>⠟</div>
+        <div>⠗</div>
+        <div>⠎</div>
+        <div>⠞</div>
+
+        <div>u</div>
+        <div>v</div>
+        <div>x</div>
+        <div>y</div>
+        <div>z</div>
+
+        <div></div>
+        <div>w</div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div>⠥</div>
+        <div>⠧</div>
+        <div>⠭</div>
+        <div>⠽</div>
+        <div>⠵</div>
+
+        <div></div>
+        <div>⠺</div>
+      </div>
     </div>
   </main>
 </template>
