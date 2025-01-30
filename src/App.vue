@@ -71,7 +71,7 @@ const buttonClass = computed(() => {
     <div v-if="showDictionary">
       <p class="text-4xl p-4">Dictionary</p>
       <p class="p-4 text-4xl">Alphabet and Numbers</p>
-      <div class="grid grid-cols-10 gap-4 p-4 text-3xl ">
+      <div class="grid grid-cols-10 gap-4 p-4 text-3xl border ">
         <div>1</div>
         <div>2</div>
         <div>3</div>
@@ -165,6 +165,48 @@ const buttonClass = computed(() => {
         <div>⠠⠠</div>
         <div>⠠⠠⠠</div>
         <div>⠄⠠</div>
+      </div>
+      <p class="p-4 text-4xl">Typeform</p>
+      <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
+        <div>italic symbol</div>
+        <div>italic word</div>
+        <div>italic passage</div>
+        <div>italic terminator</div>
+
+        <div>⠨⠆</div>
+        <div>⠨⠂</div>
+        <div>⠨⠶</div>
+        <div>⠨⠄</div>
+
+        <div>bold symbol</div>
+        <div>bold word</div>
+        <div>bold passage</div>
+        <div>bold terminator</div>
+
+        <div>⠘⠨</div>
+        <div>⠘⠨</div>
+        <div>⠘⠨</div>
+        <div>⠘⠨</div>
+
+        <div>underline symbol</div>
+        <div>underline word</div>
+        <div>underline passage</div>
+        <div>underline terminator</div>
+
+        <div>⠸⠆</div>
+        <div>⠸⠂</div>
+        <div>⠸⠶</div>
+        <div>⠸⠄</div>
+
+        <div>script symbol</div>
+        <div>script word</div>
+        <div>script passage</div>
+        <div>script terminator</div>
+
+        <div>⠈⠆</div>
+        <div>⠈⠂</div>
+        <div>⠈⠶</div>
+        <div>⠈⠄</div>
       </div>
     </div>
   </main>
