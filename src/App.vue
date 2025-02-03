@@ -69,9 +69,9 @@ const buttonClass = computed(() => {
     </div>
     <!-- Dictionary -->
     <div v-if="showDictionary">
-      <p class="text-4xl p-4">Dictionary</p>
+      <p class="text-4xl p-4">Dictionary</p> <button>add 6 cells</button>
       <p class="p-4 text-4xl">Alphabet and Numbers</p>
-      <div class="grid grid-cols-10 gap-4 p-4 text-3xl border ">
+      <div class="grid grid-cols-10 gap-4 p-4 text-5xl border ">
         <div>1</div>
         <div>2</div>
         <div>3</div>
@@ -207,6 +207,59 @@ const buttonClass = computed(() => {
         <div>⠈⠂</div>
         <div>⠈⠶</div>
         <div>⠈⠄</div>
+      </div>
+      <p class="p-4 text-4xl">Punctuation</p>
+      <div class="grid grid-cols-5 gap-4 p-4 text-3xl ">
+        <div>comma</div>
+        <div>period</div>
+        <div>apostrophe</div>
+        <div>colon</div>
+        <div>dash</div>
+
+        <div>⠨⠆</div>
+        <div>⠨⠂</div>
+        <div>⠨⠶</div>
+        <div>⠨⠄</div>
+        <div>⠨⠄</div>
+
+        <div>long-dash</div>
+        <div>exclamation mark</div>
+        <div>hyphen</div>
+        <div>question mark</div>
+        <div>semicolon</div>
+
+        <div>⠨⠆</div>
+        <div>⠨⠂</div>
+        <div>⠨⠶</div>
+        <div>⠨⠄</div>
+        <div>⠨⠄</div>
+
+        <div>elipsis</div>
+        <div>forward slash</div>
+        <div>backward slash</div>
+        <div>opening outter quotation mark</div>
+        <div>opening outter quotation mark</div>
+
+        <div>⠨⠆</div>
+        <div>⠨⠂</div>
+        <div>⠨⠶</div>
+        <div>⠨⠄</div>
+        <div>⠨⠄</div>
+
+        <div>opening inner quotation mark</div>
+        <div>opening inner quotation mark</div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div>⠨⠄</div>
+        <div>⠨⠄</div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+
+
       </div>
     </div>
   </main>
