@@ -1,6 +1,7 @@
 <script setup>
 import TranslatorInputOutput from './components/TranslatorInputOutput.vue'
 import StyleButton from './components/StyleButton.vue'
+import CellButton from './components/CellButton.vue'
 import { siteStyles } from './state.js'
 import { computed, ref } from 'vue'
 
@@ -54,6 +55,7 @@ const buttonClass = computed(() => {
         <i class="fa-solid fa-caret-down" />
         {{ !showDictionary ? "Braille Dictionary" : "Back to Translator" }}
       </button>
+      <CellButton />
     </div>
     <!-- Colour buttons -->
     <div v-if="showColorOptions" class="z-10 flex flex-wrap p-0 mb-4 animate-flip-down">
@@ -70,8 +72,8 @@ const buttonClass = computed(() => {
     <!-- Dictionary -->
     <div v-if="showDictionary">
       <p class="text-4xl p-4">Dictionary</p> <button>add 6 cells</button>
-      <p class="p-4 text-4xl">Alphabet and Numbers</p>
-      <div class="grid grid-cols-10 gap-4 p-4 text-5xl border ">
+      <p class="p-4 text-4xl border">Alphabet and Numbers</p>
+      <div class="grid grid-cols-10 gap-4 p-4 text-5xl">
         <div>1</div>
         <div>2</div>
         <div>3</div>
