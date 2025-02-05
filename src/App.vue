@@ -260,7 +260,28 @@ const buttonClass = computed(() => {
         <div></div>
         <div></div>
 
+      </div>
+      <p class="p-4 text-4xl">Grouping Punctuation</p>
+      <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
+        <div>opening round parenthesis</div>
+        <div>closing round parenthesis</div>
+        <div>opening square parenthesis</div>
+        <div>closing square parenthesis</div>
 
+        <div>⠐⠣</div>
+        <div>⠐⠜</div>
+        <div>⠨⠣</div>
+        <div>⠨⠜</div>
+
+        <div>opening curly parenthesis</div>
+        <div>closing curly parenthesis</div>
+        <div>opening angle parenthesis</div>
+        <div>closing angle parenthesis</div>
+
+        <div>⠸⠣</div>
+        <div>⠸⠜</div>
+        <div>⠈⠣</div>
+        <div>⠈⠜</div>
 
       </div>
     </div>
