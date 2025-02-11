@@ -5,7 +5,7 @@
   <div>
     <p class="text-4xl p-4">Dictionary</p> <button>add 6 cells</button>
     <p class="p-4 text-4xl border">Alphabet and Numbers</p>
-    <div class="grid grid-cols-10 gap-4 p-4 text-5xl">
+    <div class="grid grid-cols-10 gap-4 p-4 text-5xl border">
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -214,6 +214,29 @@
       <div>⠸⠜</div>
       <div>⠈⠣</div>
       <div>⠈⠜</div>
+
+    </div>
+    <p class="p-4 text-4xl">Signs of Operations and Comparison</p>
+    <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
+      <div>plus +</div>
+      <div>minus -</div>
+      <div>multiplication x</div>
+      <div>multiplication dot</div>
+
+      <div>⠐⠖</div>
+      <div>⠐⠤</div>
+      <div>⠐⠦</div>
+      <div>⠐⠲</div>
+
+      <div>division</div>
+      <div>greater than</div>
+      <div>less than</div>
+      <div>equals</div>
+
+      <div>⠐⠌</div>
+      <div>⠈⠜</div>
+      <div>⠈⠣</div>
+      <div>⠐⠶</div>
 
     </div>
   </div>
