@@ -144,11 +144,11 @@
     </div>
     <p class="p-4 text-4xl">Punctuation</p>
     <div class="grid grid-cols-5 gap-4 p-4 text-3xl ">
-      <div>comma</div>
-      <div>period</div>
-      <div>apostrophe</div>
-      <div>colon</div>
-      <div>dash</div>
+      <div>comma ,</div>
+      <div>period .</div>
+      <div>apostrophe '</div>
+      <div>colon :</div>
+      <div>dash </div>
 
       <div>⠨⠆</div>
       <div>⠨⠂</div>
@@ -156,11 +156,11 @@
       <div>⠨⠄</div>
       <div>⠨⠄</div>
 
-      <div>long-dash</div>
-      <div>exclamation mark</div>
-      <div>hyphen</div>
-      <div>question mark</div>
-      <div>semicolon</div>
+      <div>long-dash </div>
+      <div>exclamation mark !</div>
+      <div>hyphen -</div>
+      <div>question mark ?</div>
+      <div>semicolon ;</div>
 
       <div>⠨⠆</div>
       <div>⠨⠂</div>
@@ -168,11 +168,11 @@
       <div>⠨⠄</div>
       <div>⠨⠄</div>
 
-      <div>elipsis</div>
-      <div>forward slash</div>
-      <div>backward slash</div>
-      <div>opening outter quotation mark</div>
-      <div>opening outter quotation mark</div>
+      <div>elipsis ...</div>
+      <div>forward slash /</div>
+      <div>backward slash \</div>
+      <div>opening outter quotation mark "</div>
+      <div>opening outter quotation mark "</div>
 
       <div>⠨⠆</div>
       <div>⠨⠂</div>
@@ -238,6 +238,24 @@
       <div>⠈⠣</div>
       <div>⠐⠶</div>
 
+    </div>
+    <p class="p-4 text-4xl">Currency and Measurement</p>
+    <div class="grid grid-cols-3 gap-4 p-4 text-3xl ">
+      <div>cent</div>
+      <div>dollar</div>
+      <div>euro</div>
+
+      <div>⠐⠖</div>
+      <div>⠐⠤</div>
+      <div>⠐⠲</div>
+
+      <div>British Pound</div>
+      <div>feet</div>
+      <div>inches</div>
+
+      <div>⠐⠖</div>
+      <div>⠐⠤</div>
+      <div>⠐⠲</div>
     </div>
   </div>
 </template>
