@@ -1,11 +1,25 @@
-<script>
+<script setup>
+import { computed, ref } from 'vue';
+import { siteStyles } from '@/state'
+
+
+const showAlphabet = ref(false)
+
+const toggleAlphabtet = () => {
+  showAlphabet.value = !showAlphabet.value
+}
+
+const buttonClass = computed(() => {
+  return `${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.text} ${siteStyles.value.padding}`
+})
 </script>
 
 <template>
   <div>
-    <p class="text-4xl p-4">Dictionary</p> <button>add 6 cells</button>
-    <p class="p-4 text-4xl border">Alphabet and Numbers</p>
-    <div class="grid grid-cols-10 gap-4 p-4 text-5xl border">
+    <button @click="toggleAlphabtet" :class="buttonClass"
+      class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
+      <i class="fa-solid fa-caret-down" />Alphabet and Numbers</button>
+    <div v-if="!showAlphabet" class="grid grid-cols-10 gap-4 p-4 text-5xl border">
       <div>1</div>
       <div>2</div>
       <div>3</div>
