@@ -19,7 +19,7 @@ const buttonClass = computed(() => {
     <button @click="toggleAlphabtet" :class="buttonClass"
       class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
       <i class="fa-solid fa-caret-down" />Alphabet and Numbers</button>
-    <div v-if="!showAlphabet" class="grid grid-cols-10 gap-4 p-4 text-5xl border">
+    <div v-if="!showAlphabet" :class="buttonClass" class="grid grid-cols-10 gap-4 p-4 text-5xl border">
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -103,15 +103,19 @@ const buttonClass = computed(() => {
       <div>⠼</div>
     </div>
     <p class="p-4 text-4xl">Capital</p>
-    <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
-      <div>letter</div>
+    <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
+
+      <div class="border">letter</div>
+      <div class="border">⠠</div>
       <div>word</div>
+      <div>⠠⠠</div>
       <div>passage</div>
+      <div>⠠⠠⠠</div>
       <div>Grade 1 terminator</div>
 
-      <div>⠠</div>
-      <div>⠠⠠</div>
-      <div>⠠⠠⠠</div>
+
+
+
       <div>⠄⠠</div>
     </div>
     <p class="p-4 text-4xl">Typeform</p>
