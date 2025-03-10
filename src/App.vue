@@ -5,6 +5,7 @@ import CellButton from './components/CellButton.vue'
 import DictionaryComp from './components/DictionaryComp.vue'
 import { siteStyles } from './state.js'
 import { computed, ref } from 'vue'
+import './assets/App.css'
 
 const siteClass = computed(() => {
   return `${siteStyles.value.padding} ${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.background} ${siteStyles.value.layout}`
@@ -20,9 +21,18 @@ const toggleColorOptions = () => {
   showColorOptions.value = !showColorOptions.value
 }
 
-const toggleHeader = () => {
-  showHeader.value = !showHeader.value
+// const toggleHeader = () => {
+//   showHeader.value = !showHeader.value
+// }
+
+const headerTimer = () => {
+  setTimeout(() => {
+    showHeader.value = !showHeader.value
+
+  }, 2000)
 }
+
+headerTimer();
 
 const toggleDictionary = () => {
   showHeader.value = !showHeader.value
@@ -47,10 +57,10 @@ const buttonClass = computed(() => {
         class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
         <i class="fa-solid fa-caret-down" /> Color Options
       </button>
-      <button @click="toggleHeader" :class="buttonClass"
+      <!-- <button @click="toggleHeader" :class="buttonClass"
         class="rounded-md p-2 text-3xl sm:text-2xl mb-3 w-full sm:w-auto">
         <i class="fa-solid fa-caret-down" /> Toggle Welcome
-      </button>
+      </button> -->
       <button @click="toggleDictionary" :class="buttonClass"
         class="rounded-md p-2 text-3xl sm:text-2xl mb-3 w-full sm:w-auto">
         <i class="fa-solid fa-caret-down" />
@@ -63,9 +73,13 @@ const buttonClass = computed(() => {
       <StyleButton></StyleButton>
     </div>
     <!-- Title -->
-    <h1 v-if="!showHeader" class="text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 animate-fade-down mb-3">
-      Welcome to Simple Braille Translator
-    </h1>
+    <Transition name="fade">
+      <h1 v-if="!showHeader"
+        class="transition delay-150 duration-300 ease-in-out text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 mb-3">
+        Welcome to Simple Braille Translator
+      </h1>
+
+    </Transition>
     <!-- Translator -->
     <div v-if="!showTranslator" class="w-full sm:w-3/4">
       <TranslatorInputOutput @update:query="handleQueryUpdate" />
