@@ -4,7 +4,7 @@ import StyleButton from './components/StyleButton.vue'
 import CellButton from './components/CellButton.vue'
 import DictionaryComp from './components/DictionaryComp.vue'
 import { siteStyles } from './state.js'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import './assets/App.css'
 
 const siteClass = computed(() => {
@@ -25,14 +25,26 @@ const toggleColorOptions = () => {
 //   showHeader.value = !showHeader.value
 // }
 
-const headerTimer = () => {
+// const headerTimer = () => {
+//   setTimeout(() => {
+//     showHeader.value = !showHeader.value
+
+//   }, 2000)
+// }
+
+// headerTimer();
+
+onMounted(() => {
   setTimeout(() => {
-    showHeader.value = !showHeader.value
+    showHeader.value = true
 
-  }, 2000)
-}
+  }, 200)
 
-headerTimer();
+  setTimeout(() => {
+    showHeader.value = false
+
+  }, 3000)
+})
 
 const toggleDictionary = () => {
   showHeader.value = !showHeader.value
@@ -73,9 +85,14 @@ const buttonClass = computed(() => {
       <StyleButton></StyleButton>
     </div>
     <!-- Title -->
-    <Transition name="fade">
-      <h1 v-if="!showHeader"
-        class="transition delay-150 duration-300 ease-in-out text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 mb-3">
+    <Transition 
+      enter-from-class="opacity-0 max-h-0" 
+      enter-leave-class="opacity-100 max-h-screen"
+      enter-active-class="animate-fade-down transition-all max-h-screen ease-in-out duration-1000" 
+      leave-from-class="opacity-100 max-h-screen" 
+      leave-to-class="opacity-0 max-h-0"
+      leave-active-class="transition-all max-h-screen ease-in-out duration-1000">
+      <h1 v-if="showHeader" class=" text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 mb-3">
         Welcome to Simple Braille Translator
       </h1>
 
