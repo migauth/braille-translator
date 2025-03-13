@@ -37,3 +37,14 @@ npm i tailwindcss-animated
 ```sh
 npm run dev
 ```
+
+### Some resources I used:
+
+- Slide animation
+https://codesandbox.io/p/sandbox/tailwind-collapsible-transition-max-height-0kojoc?file=%2Findex.html%3A56%2C39-56%2C51
+
+- Vue video for transitions
+https://www.youtube.com/watch?v=wrRynSC8Zqc
+
+- Braille unicode
+https://www.unicode.org/charts/nameslist/c_2800.html
