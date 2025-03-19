@@ -263,9 +263,9 @@ const buttonClass = computed(() => {
       <div>dollar</div>
       <div>euro</div>
 
-      <div>⠐⠖</div>
-      <div>⠐⠤</div>
-      <div>⠐⠲</div>
+      <div>⠈⠉</div>
+      <div>⠈⠎</div>
+      <div>⠈⠑</div>
 
       <div>British Pound</div>
       <div>feet</div>
