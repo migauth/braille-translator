@@ -1,7 +1,7 @@
 <script setup>
 import TranslatorInputOutput from './components/TranslatorInputOutput.vue'
 import StyleButton from './components/StyleButton.vue'
-// import CellButton from './components/CellButton.vue'
+import CellButton from './components/CellButton.vue'
 import DictionaryComp from './components/DictionaryComp.vue'
 import { siteStyles } from './state.js'
 import { computed, onMounted, ref } from 'vue'
@@ -51,7 +51,10 @@ const buttonClass = computed(() => {
   <main :class="siteClass">
 
     <!-- Toggle Button -->
+
+    
     <div class="flex flex-wrap sm:gap-3">
+      <CellButton />
 
       <button @click="toggleColorOptions" :class="buttonClass"
         class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
@@ -65,20 +68,21 @@ const buttonClass = computed(() => {
       </button>
 
       <!-- <CellButton /> -->
+
+      
     </div>
 
     <!-- Colour buttons -->
     <div v-if="showColorOptions" class="z-10 flex flex-wrap p-0 mb-4 animate-flip-down">
-      <StyleButton></StyleButton>
+      <StyleButton />
     </div>
 
+
+
     <!-- Title -->
-    <Transition 
-      enter-from-class="opacity-0 max-h-0" 
-      enter-leave-class="opacity-100 max-h-screen"
-      enter-active-class="animate-fade-down transition-all max-h-screen ease duration-1000" 
-      leave-from-class="opacity-100 max-h-screen" 
-      leave-to-class="opacity-0 max-h-0"
+    <Transition enter-from-class="opacity-0 max-h-0" enter-leave-class="opacity-100 max-h-screen"
+      enter-active-class="animate-fade-down transition-all max-h-screen ease duration-1000"
+      leave-from-class="opacity-100 max-h-screen" leave-to-class="opacity-0 max-h-0"
       leave-active-class="transition-all max-h-screen ease duration-500">
       <h1 v-if="showHeader" class=" text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 mb-3">
         Welcome to Simple Braille Translator
@@ -95,5 +99,6 @@ const buttonClass = computed(() => {
     <div v-if="showDictionary">
       <DictionaryComp />
     </div>
+
   </main>
 </template>

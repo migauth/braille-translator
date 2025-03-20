@@ -1,7 +1,6 @@
 <script setup>
 import { computed, reactive, watch, defineEmits } from 'vue'
 import { inputStyles, siteStyles } from '@/state'
-import CellButton from './CellButton.vue'
 
 const searchTerm = reactive({
   query: ''
@@ -90,7 +89,6 @@ const buttonClass = computed(() => {
       <button :class="buttonClass" class="border-none text-2xl sm:text-4xl hover:animate-jump" @click="clearInput">
         <i class="fa-solid fa-delete-left" />
       </button>
-      <CellButton />
     </div>
     <div class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
       {{ textToBraille(searchTerm.query) }}
