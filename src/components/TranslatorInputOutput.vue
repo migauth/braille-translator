@@ -79,10 +79,10 @@ const buttonClass = computed(() => {
 </script>
 
 <template>
-  <div class="w-full sm:w-3/4">
+  <div>
     <div class="flex">
       <form @submit.prevent>
-        <div class="w-full">
+        <div>
           <input id="textInput" type="text" placeholder="Type here" :class="inputClass" v-model="searchTerm.query" />
         </div>
       </form>
@@ -90,7 +90,12 @@ const buttonClass = computed(() => {
         <i class="fa-solid fa-delete-left" />
       </button>
     </div>
-    <div class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
+
+    <div v-if="showCells" class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
+      {{ textToBraille(searchTerm.query) }}
+    </div>
+
+    <div v-else class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
       {{ textToBraille(searchTerm.query) }}
     </div>
   </div>

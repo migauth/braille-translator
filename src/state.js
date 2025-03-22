@@ -10,7 +10,7 @@ export const siteStyles = ref({
 })
 
 export const inputStyles = ref({
-  width: 'w-full sm:w-3/4',
+  width: 'w-full',
   border: 'border-8 border-dashed border-[rgba(255,255,0,1)]',
   background: 'bg-black',
   rounded: 'rounded-md',

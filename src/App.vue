@@ -16,6 +16,7 @@ const showHeader = ref(false)
 const showTranslator = ref(false)
 const showDictionary = ref(false)
 const isTyping = ref(false)
+const showCells = ref(false)
 
 const toggleColorOptions = () => {
   showColorOptions.value = !showColorOptions.value
@@ -50,10 +51,8 @@ const buttonClass = computed(() => {
 <template>
   <main :class="siteClass">
 
-    <!-- Toggle Button -->
-
-    
     <div class="flex flex-wrap sm:gap-3">
+
       <CellButton />
 
       <button @click="toggleColorOptions" :class="buttonClass"
@@ -67,17 +66,12 @@ const buttonClass = computed(() => {
         {{ !showDictionary ? "Braille Dictionary" : "Back to Translator" }}
       </button>
 
-      <!-- <CellButton /> -->
-
-      
     </div>
 
     <!-- Colour buttons -->
     <div v-if="showColorOptions" class="z-10 flex flex-wrap p-0 mb-4 animate-flip-down">
       <StyleButton />
     </div>
-
-
 
     <!-- Title -->
     <Transition enter-from-class="opacity-0 max-h-0" enter-leave-class="opacity-100 max-h-screen"
@@ -87,11 +81,10 @@ const buttonClass = computed(() => {
       <h1 v-if="showHeader" class=" text-5xl sm:text-5xl md:text-7xl lg:text-8xl w-3/4 mb-3">
         Welcome to Simple Braille Translator
       </h1>
-
     </Transition>
 
     <!-- Translator -->
-    <div v-if="!showTranslator" class="w-full sm:w-3/4">
+    <div v-if="!showTranslator">
       <TranslatorInputOutput @update:query="handleQueryUpdate" />
     </div>
 
