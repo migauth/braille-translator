@@ -5,7 +5,8 @@ import CellButton from './components/CellButton.vue'
 import DictionaryComp from './components/DictionaryComp.vue'
 import { siteStyles } from './state.js'
 import { computed, onMounted, ref } from 'vue'
-// import './assets/App.css'
+
+
 
 const siteClass = computed(() => {
   return `${siteStyles.value.padding} ${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.background} ${siteStyles.value.layout}`
@@ -16,7 +17,6 @@ const showHeader = ref(false)
 const showTranslator = ref(false)
 const showDictionary = ref(false)
 const isTyping = ref(false)
-const showCells = ref(false)
 
 const toggleColorOptions = () => {
   showColorOptions.value = !showColorOptions.value
@@ -46,6 +46,9 @@ const handleQueryUpdate = (query) => {
 const buttonClass = computed(() => {
   return `${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.text} ${siteStyles.value.padding}`
 })
+
+
+
 </script>
 
 <template>

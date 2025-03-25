@@ -1,16 +1,15 @@
 <script setup>
-import { computed, ref } from 'vue';
-import { siteStyles } from '@/state'
+import { computed } from 'vue';
+import { cellOn, siteStyles } from '@/state'
 
 const buttonClass = computed(() => {
   return `${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.text} ${siteStyles.value.padding}`
 })
 
 const toggleCells = () => {
-  showCells.value = !showCells.value
+  cellOn.value = !cellOn.value
+  console.log('cellon', cellOn);
 }
-
-const showCells = ref(false)
 
 </script>
 

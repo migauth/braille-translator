@@ -18,3 +18,5 @@ export const inputStyles = ref({
   text: 'text-4xl sm:text-4xl',
   padding: 'p-2 sm:p-6'
 })
+
+export const cellOn = ref(false)

@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
-import { siteStyles } from '@/state'
+import { cellOn, siteStyles } from '@/state'
 
 
 const showAlphabet = ref(false)
@@ -12,6 +12,7 @@ const toggleAlphabtet = () => {
 const buttonClass = computed(() => {
   return `${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.text} ${siteStyles.value.padding}`
 })
+
 </script>
 
 <template>
@@ -19,7 +20,7 @@ const buttonClass = computed(() => {
     <button @click="toggleAlphabtet" :class="buttonClass"
       class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
       <i class="fa-solid fa-caret-down" />Alphabet and Numbers</button>
-    <div v-if="!showAlphabet" :class="buttonClass" class="grid grid-cols-10 gap-4 p-4 text-5xl border">
+    <div v-if="!showAlphabet"  :class="buttonClass" class="grid grid-cols-10 gap-4 p-4 text-5xl border">
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -42,16 +43,16 @@ const buttonClass = computed(() => {
       <div>i</div>
       <div>j</div>
 
-      <div>⠁</div>
-      <div>⠃</div>
-      <div>⠉</div>
-      <div>⠙</div>
-      <div>⠑</div>
-      <div>⠋</div>
-      <div>⠛</div>
-      <div>⠓</div>
-      <div>⠑</div>
-      <div>⠚</div>
+      <div :class="!cellOn ? '' : 'brl'">⠁</div>
+      <div :class="!cellOn ? '' : 'brl'">⠃</div>
+      <div :class="!cellOn ? '' : 'brl'">⠉</div>
+      <div :class="!cellOn ? '' : 'brl'">⠙</div>
+      <div :class="!cellOn ? '' : 'brl'">⠑</div>
+      <div :class="!cellOn ? '' : 'brl'">⠋</div>
+      <div :class="!cellOn ? '' : 'brl'">⠛</div>
+      <div :class="!cellOn ? '' : 'brl'">⠓</div>
+      <div :class="!cellOn ? '' : 'brl'">⠑</div>
+      <div :class="!cellOn ? '' : 'brl'">⠚</div>
 
       <div>k</div>
       <div>l</div>
@@ -64,16 +65,16 @@ const buttonClass = computed(() => {
       <div>s</div>
       <div>t</div>
 
-      <div>⠅</div>
-      <div>⠇</div>
-      <div>⠍</div>
-      <div>⠝</div>
-      <div>⠕</div>
-      <div>⠏</div>
-      <div>⠟</div>
-      <div>⠗</div>
-      <div>⠎</div>
-      <div>⠞</div>
+      <div :class="!cellOn ? '' : 'brl'">⠅</div>
+      <div :class="!cellOn ? '' : 'brl'">⠇</div>
+      <div :class="!cellOn ? '' : 'brl'">⠍</div>
+      <div :class="!cellOn ? '' : 'brl'">⠝</div>
+      <div :class="!cellOn ? '' : 'brl'">⠕</div>
+      <div :class="!cellOn ? '' : 'brl'">⠏</div>
+      <div :class="!cellOn ? '' : 'brl'">⠟</div>
+      <div :class="!cellOn ? '' : 'brl'">⠗</div>
+      <div :class="!cellOn ? '' : 'brl'">⠎</div>
+      <div :class="!cellOn ? '' : 'brl'">⠞</div>
 
       <div>u</div>
       <div>v</div>
@@ -87,36 +88,36 @@ const buttonClass = computed(() => {
       <div></div>
       <div></div>
 
-      <div>⠥</div>
-      <div>⠧</div>
-      <div>⠭</div>
-      <div>⠽</div>
-      <div>⠵</div>
+      <div :class="!cellOn ? '' : 'brl'">⠥</div>
+      <div :class="!cellOn ? '' : 'brl'">⠧</div>
+      <div :class="!cellOn ? '' : 'brl'">⠭</div>
+      <div :class="!cellOn ? '' : 'brl'">⠽</div>
+      <div :class="!cellOn ? '' : 'brl'">⠵</div>
 
       <div></div>
-      <div>⠺</div>
+      <div :class="!cellOn ? '' : 'brl'">⠺</div>
     </div>
     <p class="p-4 text-4xl">Indicators</p>
     <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
       <div>Numeric</div>
       <div></div>
-      <div>⠼</div>
+      <div :class="!cellOn ? '' : 'brl'">⠼</div>
     </div>
     <p class="p-4 text-4xl">Capital</p>
     <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
 
       <div class="border">letter</div>
-      <div class="border">⠠</div>
+      <div class="border" :class="!cellOn ? '' : 'brl'">⠠</div>
       <div>word</div>
-      <div>⠠⠠</div>
+      <div :class="!cellOn ? '' : 'brl'">⠠⠠</div>
       <div>passage</div>
-      <div>⠠⠠⠠</div>
+      <div :class="!cellOn ? '' : 'brl'">⠠⠠⠠</div>
       <div>Grade 1 terminator</div>
 
 
 
 
-      <div>⠄⠠</div>
+      <div :class="!cellOn ? '' : 'brl'">⠄⠠</div>
     </div>
     <p class="p-4 text-4xl">Typeform</p>
     <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
@@ -125,40 +126,40 @@ const buttonClass = computed(() => {
       <div>italic passage</div>
       <div>italic terminator</div>
 
-      <div>⠨⠆</div>
-      <div>⠨⠂</div>
-      <div>⠨⠶</div>
-      <div>⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
 
       <div>bold symbol</div>
       <div>bold word</div>
       <div>bold passage</div>
       <div>bold terminator</div>
 
-      <div>⠘⠨</div>
-      <div>⠘⠨</div>
-      <div>⠘⠨</div>
-      <div>⠘⠨</div>
+      <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
+      <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
+      <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
+      <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
 
       <div>underline symbol</div>
       <div>underline word</div>
       <div>underline passage</div>
       <div>underline terminator</div>
 
-      <div>⠸⠆</div>
-      <div>⠸⠂</div>
-      <div>⠸⠶</div>
-      <div>⠸⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠸⠆</div>
+      <div :class="!cellOn ? '' : 'brl'">⠸⠂</div>
+      <div :class="!cellOn ? '' : 'brl'">⠸⠶</div>
+      <div :class="!cellOn ? '' : 'brl'">⠸⠄</div>
 
       <div>script symbol</div>
       <div>script word</div>
       <div>script passage</div>
       <div>script terminator</div>
 
-      <div>⠈⠆</div>
-      <div>⠈⠂</div>
-      <div>⠈⠶</div>
-      <div>⠈⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠆</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠂</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠶</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠄</div>
     </div>
     <p class="p-4 text-4xl">Punctuation</p>
     <div class="grid grid-cols-5 gap-4 p-4 text-3xl ">
@@ -168,11 +169,11 @@ const buttonClass = computed(() => {
       <div>colon :</div>
       <div>dash </div>
 
-      <div>⠨⠆</div>
-      <div>⠨⠂</div>
-      <div>⠨⠶</div>
-      <div>⠨⠄</div>
-      <div>⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
 
       <div>long-dash </div>
       <div>exclamation mark !</div>
@@ -180,11 +181,11 @@ const buttonClass = computed(() => {
       <div>question mark ?</div>
       <div>semicolon ;</div>
 
-      <div>⠨⠆</div>
-      <div>⠨⠂</div>
-      <div>⠨⠶</div>
-      <div>⠨⠄</div>
-      <div>⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
 
       <div>elipsis ...</div>
       <div>forward slash /</div>
@@ -192,11 +193,11 @@ const buttonClass = computed(() => {
       <div>opening outter quotation mark "</div>
       <div>opening outter quotation mark "</div>
 
-      <div>⠨⠆</div>
-      <div>⠨⠂</div>
-      <div>⠨⠶</div>
-      <div>⠨⠄</div>
-      <div>⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
 
       <div>opening inner quotation mark</div>
       <div>opening inner quotation mark</div>
@@ -204,8 +205,8 @@ const buttonClass = computed(() => {
       <div></div>
       <div></div>
 
-      <div>⠨⠄</div>
-      <div>⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
       <div></div>
       <div></div>
       <div></div>
@@ -218,20 +219,20 @@ const buttonClass = computed(() => {
       <div>opening square parenthesis</div>
       <div>closing square parenthesis</div>
 
-      <div>⠐⠣</div>
-      <div>⠐⠜</div>
-      <div>⠨⠣</div>
-      <div>⠨⠜</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠣</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠜</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠣</div>
+      <div :class="!cellOn ? '' : 'brl'">⠨⠜</div>
 
       <div>opening curly parenthesis</div>
       <div>closing curly parenthesis</div>
       <div>opening angle parenthesis</div>
       <div>closing angle parenthesis</div>
 
-      <div>⠸⠣</div>
-      <div>⠸⠜</div>
-      <div>⠈⠣</div>
-      <div>⠈⠜</div>
+      <div :class="!cellOn ? '' : 'brl'">⠸⠣</div>
+      <div :class="!cellOn ? '' : 'brl'">⠸⠜</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠣</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠜</div>
 
     </div>
     <p class="p-4 text-4xl">Signs of Operations and Comparison</p>
@@ -241,20 +242,20 @@ const buttonClass = computed(() => {
       <div>multiplication x</div>
       <div>multiplication dot</div>
 
-      <div>⠐⠖</div>
-      <div>⠐⠤</div>
-      <div>⠐⠦</div>
-      <div>⠐⠲</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠖</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠤</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠦</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠲</div>
 
       <div>division</div>
       <div>greater than</div>
       <div>less than</div>
       <div>equals</div>
 
-      <div>⠐⠌</div>
-      <div>⠈⠜</div>
-      <div>⠈⠣</div>
-      <div>⠐⠶</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠌</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠜</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠣</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠶</div>
 
     </div>
     <p class="p-4 text-4xl">Currency and Measurement</p>
@@ -263,17 +264,23 @@ const buttonClass = computed(() => {
       <div>dollar</div>
       <div>euro</div>
 
-      <div>⠈⠉</div>
-      <div>⠈⠎</div>
-      <div>⠈⠑</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠉</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠎</div>
+      <div :class="!cellOn ? '' : 'brl'">⠈⠑</div>
 
       <div>British Pound</div>
       <div>feet</div>
       <div>inches</div>
 
-      <div>⠐⠖</div>
-      <div>⠐⠤</div>
-      <div>⠐⠲</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠖</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠤</div>
+      <div :class="!cellOn ? '' : 'brl'">⠐⠲</div>
     </div>
   </div>
 </template>
+
+<style>
+  .brl {
+    font-weight: lighter;
+  }
+</style>

@@ -1,6 +1,7 @@
 <script setup>
 import { computed, reactive, watch, defineEmits } from 'vue'
 import { inputStyles, siteStyles } from '@/state'
+import { cellOn } from '@/state'
 
 const searchTerm = reactive({
   query: ''
@@ -91,11 +92,11 @@ const buttonClass = computed(() => {
       </button>
     </div>
 
-    <div v-if="showCells" class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
+    <div v-if="!cellOn" class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
       {{ textToBraille(searchTerm.query) }}
     </div>
 
-    <div v-else class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
+    <div v-else-if="cellOn" class="w-full text-5xl font-thin sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
       {{ textToBraille(searchTerm.query) }}
     </div>
   </div>
