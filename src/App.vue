@@ -1,18 +1,10 @@
 <script setup>
 import TranslatorInputOutput from './components/TranslatorInputOutput.vue'
 import StyleButton from './components/StyleButton.vue'
-import CellButton from './components/CellButton.vue'
 import DictionaryComp from './components/DictionaryComp.vue'
-import { siteStyles } from './state.js'
 import { computed, onMounted, ref } from 'vue'
+import { siteStyles } from './state.js'
 import { cellOn } from '@/state'
-
-
-
-
-const siteClass = computed(() => {
-  return `${siteStyles.value.padding} ${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.background} ${siteStyles.value.layout}`
-})
 
 const showColorOptions = ref(false)
 const showHeader = ref(false)
@@ -23,6 +15,8 @@ const isTyping = ref(false)
 const toggleColorOptions = () => {
   showColorOptions.value = !showColorOptions.value
 }
+
+// Welcome sign
 
 onMounted(() => {
   setTimeout(() => {
@@ -45,14 +39,18 @@ const handleQueryUpdate = (query) => {
   isTyping.value = query.length > 0
 }
 
-const buttonClass = computed(() => {
-  return `${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.text} ${siteStyles.value.padding}`
-})
-
 const toggleCells = () => {
   cellOn.value = !cellOn.value
   console.log('cellon', cellOn);
 }
+
+const buttonClass = computed(() => {
+  return `${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.text} ${siteStyles.value.padding}`
+})
+
+const siteClass = computed(() => {
+  return `${siteStyles.value.padding} ${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.background} ${siteStyles.value.layout}`
+})
 
 
 
@@ -63,10 +61,8 @@ const toggleCells = () => {
 
     <div class="flex flex-wrap sm:gap-3">
 
-      <!-- <CellButton /> -->
-
       <button @click="toggleCells" :class="buttonClass"
-        class="font-semibold rounded-md p-2 text-3xl sm:text-6xl mb-3 w-full sm:w-auto">⠀</button>
+        class="font-bold rounded-md p-2 text-3xl sm:text-6xl mb-3 w-full sm:w-auto">⠀</button>
 
       <button @click="toggleColorOptions" :class="buttonClass"
         class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
