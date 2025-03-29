@@ -62,7 +62,7 @@ const siteClass = computed(() => {
     <div class="flex flex-wrap sm:gap-3">
 
       <button @click="toggleCells" :class="buttonClass"
-        class="font-bold rounded-md p-2 text-3xl sm:text-6xl mb-3 w-full sm:w-auto">⠀</button>
+        class="font-bold rounded-md p-2 text-3xl sm:text-6xl mb-3 w-full sm:w-auto">test ⠀</button>
 
       <button @click="toggleColorOptions" :class="buttonClass"
         class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
