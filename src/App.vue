@@ -5,6 +5,8 @@ import CellButton from './components/CellButton.vue'
 import DictionaryComp from './components/DictionaryComp.vue'
 import { siteStyles } from './state.js'
 import { computed, onMounted, ref } from 'vue'
+import { cellOn } from '@/state'
+
 
 
 
@@ -46,6 +48,11 @@ const handleQueryUpdate = (query) => {
 const buttonClass = computed(() => {
   return `${siteStyles.value.border} ${siteStyles.value.text} ${siteStyles.value.text} ${siteStyles.value.padding}`
 })
+
+const toggleCells = () => {
+  cellOn.value = !cellOn.value
+  console.log('cellon', cellOn);
+}
 
 
 
