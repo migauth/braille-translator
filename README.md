@@ -1,5 +1,7 @@
 # Simple braille translator
 
+Link: https://migauth.github.io/braille-translator/
+
 !["screenshot"](https://github.com/migauth/braille-translator/blob/main/public/screenshot2.png?raw=true)
 
 Grade 1 braille translation (with punctuation).
