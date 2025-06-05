@@ -39,6 +39,7 @@ const handleQueryUpdate = (query) => {
   isTyping.value = query.length > 0
 }
 
+// eslint-disable-next-line no-unused-vars
 const toggleCells = () => {
   cellOn.value = !cellOn.value
   console.log('cellon', cellOn);
