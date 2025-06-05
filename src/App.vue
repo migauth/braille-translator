@@ -1,6 +1,7 @@
 <script setup>
 import TranslatorInputOutput from './components/TranslatorInputOutput.vue'
 import StyleButton from './components/StyleButton.vue'
+// eslint-disable-next-line no-unused-vars
 import DictionaryComp from './components/DictionaryComp.vue'
 import { computed, onMounted, ref } from 'vue'
 import { siteStyles } from './state.js'
@@ -30,6 +31,7 @@ onMounted(() => {
   }, 3000)
 })
 
+// eslint-disable-next-line no-unused-vars
 const toggleDictionary = () => {
   showTranslator.value = !showTranslator.value
   showDictionary.value = !showDictionary.value
