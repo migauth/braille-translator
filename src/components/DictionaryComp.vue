@@ -20,7 +20,8 @@ const buttonClass = computed(() => {
     <button @click="toggleAlphabtet" :class="buttonClass"
       class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
       <i class="fa-solid fa-caret-down" />Alphabet and Numbers</button>
-    <div v-if="!showAlphabet"  :class="buttonClass" class="grid grid-cols-10 gap-4 p-4 text-5xl border">
+
+    <div v-if="!showAlphabet" :class="buttonClass" class="grid grid-cols-10 gap-4 p-4 text-5xl border">
       <div>1</div>
       <div>2</div>
       <div>3</div>
@@ -97,142 +98,159 @@ const buttonClass = computed(() => {
       <div></div>
       <div :class="!cellOn ? '' : 'brl'">⠺</div>
     </div>
+
     <p class="p-4 text-4xl">Indicators</p>
-    <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
-      <div>Numeric</div>
-      <div></div>
-      <div :class="!cellOn ? '' : 'brl'">⠼</div>
+
+    <div :class="buttonClass">
+
+      <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
+        <div>Numeric</div>
+        <div></div>
+        <div :class="!cellOn ? '' : 'brl'">⠼</div>
+      </div>
+
+      <p class="p-4 text-4xl">Capital</p>
+      <div class="grid grid-cols-2 gap-4 p-4 text-4xl ">
+        <div class="text-2xl sm:text-4xl">letter</div>
+        <div :class="!cellOn ? '' : 'brl'">⠠</div>
+        <div class="text-2xl sm:text-4xl">word</div>
+        <div :class="!cellOn ? '' : 'brl'">⠠⠠</div>
+        <div class="text-2xl sm:text-4xl">passage</div>
+        <div :class="!cellOn ? '' : 'brl'">⠠⠠⠠</div>
+        <div class="text-2xl sm:text-4xl">Grade 1 terminator</div>
+        <div :class="!cellOn ? '' : 'brl'">⠄⠠</div>
+      </div>
+
+      <p class="p-4 text-4xl">Typeform</p>
+      <div class="grid grid-cols-2 gap-4 p-4 text-5xl sm:grid-cols-4">
+
+        <div class="text-2xl sm:text-4xl">italic symbol</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
+        <div class="text-2xl sm:text-4xl">italic word</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
+        <div class="text-2xl sm:text-4xl">italic passage</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
+        <div class="text-2xl sm:text-4xl">italic terminator</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+
+        <div class="text-2xl sm:text-4xl">bold symbol</div>
+        <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
+        <div class="text-2xl sm:text-4xl">bold word</div>
+        <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
+        <div class="text-2xl sm:text-4xl">bold passage</div>
+        <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
+        <div class="text-2xl sm:text-4xl">bold terminator</div>
+        <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
+
+
+        <div class="text-2xl sm:text-4xl">underline symbol</div>
+        <div :class="!cellOn ? '' : 'brl'">⠸⠆</div>
+        <div class="text-2xl sm:text-4xl">underline word</div>
+        <div :class="!cellOn ? '' : 'brl'">⠸⠂</div>
+        <div class="text-2xl sm:text-4xl">underline passage</div>
+        <div :class="!cellOn ? '' : 'brl'">⠸⠶</div>
+        <div class="text-2xl sm:text-4xl">underline terminator</div>
+        <div :class="!cellOn ? '' : 'brl'">⠸⠄</div>
+
+
+        <div class="text-2xl sm:text-4xl">script symbol</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠆</div>
+        <div class="text-2xl sm:text-4xl">script word</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠂</div>
+        <div class="text-2xl sm:text-4xl">script passage</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠶</div>
+        <div class="text-2xl sm:text-4xl">script terminator</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠄</div>
+
+      </div>
+
     </div>
-    <p class="p-4 text-4xl">Capital</p>
-    <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
 
-      <div class="border">letter</div>
-      <div class="border" :class="!cellOn ? '' : 'brl'">⠠</div>
-      <div>word</div>
-      <div :class="!cellOn ? '' : 'brl'">⠠⠠</div>
-      <div>passage</div>
-      <div :class="!cellOn ? '' : 'brl'">⠠⠠⠠</div>
-      <div>Grade 1 terminator</div>
-
-
-
-
-      <div :class="!cellOn ? '' : 'brl'">⠄⠠</div>
-    </div>
-    <p class="p-4 text-4xl">Typeform</p>
-    <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
-      <div>italic symbol</div>
-      <div>italic word</div>
-      <div>italic passage</div>
-      <div>italic terminator</div>
-
-      <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
-
-      <div>bold symbol</div>
-      <div>bold word</div>
-      <div>bold passage</div>
-      <div>bold terminator</div>
-
-      <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
-      <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
-      <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
-      <div :class="!cellOn ? '' : 'brl'">⠘⠨</div>
-
-      <div>underline symbol</div>
-      <div>underline word</div>
-      <div>underline passage</div>
-      <div>underline terminator</div>
-
-      <div :class="!cellOn ? '' : 'brl'">⠸⠆</div>
-      <div :class="!cellOn ? '' : 'brl'">⠸⠂</div>
-      <div :class="!cellOn ? '' : 'brl'">⠸⠶</div>
-      <div :class="!cellOn ? '' : 'brl'">⠸⠄</div>
-
-      <div>script symbol</div>
-      <div>script word</div>
-      <div>script passage</div>
-      <div>script terminator</div>
-
-      <div :class="!cellOn ? '' : 'brl'">⠈⠆</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠂</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠶</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠄</div>
-    </div>
     <p class="p-4 text-4xl">Punctuation</p>
-    <div class="grid grid-cols-5 gap-4 p-4 text-3xl ">
-      <div>comma ,</div>
-      <div>period .</div>
-      <div>apostrophe '</div>
-      <div>colon :</div>
-      <div>dash </div>
 
-      <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+    <div :class="buttonClass">
 
-      <div>long-dash </div>
-      <div>exclamation mark !</div>
-      <div>hyphen -</div>
-      <div>question mark ?</div>
-      <div>semicolon ;</div>
+      <div class="grid grid-cols-2 gap-4 p-4 text-3xl sm:grid-cols-4">
 
-      <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+        <div class="text-2xl sm:text-4xl">comma ,</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
+        <div class="text-2xl sm:text-4xl">period .</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
+        <div class="text-2xl sm:text-4xl">apostrophe '</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
+        <div class="text-2xl sm:text-4xl">colon :</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+        <div class="text-2xl sm:text-4xl">dash </div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
 
-      <div>elipsis ...</div>
-      <div>forward slash /</div>
-      <div>backward slash \</div>
-      <div>opening outter quotation mark "</div>
-      <div>opening outter quotation mark "</div>
 
-      <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+        <div class="text-2xl sm:text-4xl">long-dash </div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
+        <div class="text-2xl sm:text-4xl">exclamation mark !</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
+        <div class="text-2xl sm:text-4xl">hyphen -</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
+        <div class="text-2xl sm:text-4xl">question mark ?</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+        <div class="text-2xl sm:text-4xl">semicolon ;</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
 
-      <div>opening inner quotation mark</div>
-      <div>opening inner quotation mark</div>
-      <div></div>
-      <div></div>
-      <div></div>
 
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
-      <div></div>
-      <div></div>
-      <div></div>
+        <div class="text-2xl sm:text-4xl">elipsis ...</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠆</div>
+        <div class="text-2xl sm:text-4xl">forward slash /</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠂</div>
+        <div class="text-2xl sm:text-4xl">backward slash \</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠶</div>
+        <div class="text-2xl sm:text-4xl">opening outter quotation mark "</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+        <div class="text-2xl sm:text-4xl">opening outter quotation mark "</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+
+
+        <div class="text-2xl sm:text-4xl">opening inner quotation mark</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+        <div class="text-2xl sm:text-4xl">opening inner quotation mark</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠄</div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+
+      </div>
 
     </div>
+
     <p class="p-4 text-4xl">Grouping Punctuation</p>
-    <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
-      <div>opening round parenthesis</div>
-      <div>closing round parenthesis</div>
-      <div>opening square parenthesis</div>
-      <div>closing square parenthesis</div>
 
-      <div :class="!cellOn ? '' : 'brl'">⠐⠣</div>
-      <div :class="!cellOn ? '' : 'brl'">⠐⠜</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠣</div>
-      <div :class="!cellOn ? '' : 'brl'">⠨⠜</div>
+    <div :class="buttonClass">
 
-      <div>opening curly parenthesis</div>
-      <div>closing curly parenthesis</div>
-      <div>opening angle parenthesis</div>
-      <div>closing angle parenthesis</div>
+      <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
 
-      <div :class="!cellOn ? '' : 'brl'">⠸⠣</div>
-      <div :class="!cellOn ? '' : 'brl'">⠸⠜</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠣</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠜</div>
+        <div>opening round parenthesis</div>
+        <div>closing round parenthesis</div>
+        <div>opening square parenthesis</div>
+        <div>closing square parenthesis</div>
+
+        <div :class="!cellOn ? '' : 'brl'">⠐⠣</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠜</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠣</div>
+        <div :class="!cellOn ? '' : 'brl'">⠨⠜</div>
+
+        <div>opening curly parenthesis</div>
+        <div>closing curly parenthesis</div>
+        <div>opening angle parenthesis</div>
+        <div>closing angle parenthesis</div>
+
+        <div :class="!cellOn ? '' : 'brl'">⠸⠣</div>
+        <div :class="!cellOn ? '' : 'brl'">⠸⠜</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠣</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠜</div>
+
+      </div>
 
     </div>
     <p class="p-4 text-4xl">Signs of Operations and Comparison</p>
@@ -280,7 +298,7 @@ const buttonClass = computed(() => {
 </template>
 
 <style>
-  .brl {
-    font-weight: lighter;
-  }
+.brl {
+  font-weight: lighter;
+}
 </style>

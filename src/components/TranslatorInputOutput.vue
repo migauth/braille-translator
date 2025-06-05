@@ -96,7 +96,7 @@ const buttonClass = computed(() => {
       {{ textToBraille(searchTerm.query) }}
     </div>
 
-    <div v-else-if="cellOn" class="w-full text-5xl font-bold sm:text-6xl p-2 sm:p-6 overflow-auto break-words">
+    <div v-else-if="cellOn" class="w-full text-5xl sm:text-6xl p-2 sm:p-6 overflow-auto break-words" :class="!cellOn ? '' : 'brl'">
       {{ textToBraille(searchTerm.query) }}
     </div>
   </div>
