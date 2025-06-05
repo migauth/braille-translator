@@ -64,19 +64,20 @@ const siteClass = computed(() => {
 
     <div class="flex flex-wrap sm:gap-3">
 
-      <!-- <button @click="toggleCells" :class="buttonClass"
-        class=" rounded-md p-2 text-3xl sm:text-6xl mb-3 w-full sm:w-auto" id="cell">test ⠀⠁</button> -->
+      <button @click="toggleCells" :class="buttonClass"
+        class=" rounded-md p-2 text-3xl mb-3 w-full sm:w-auto" >Show Cells <span :class="!cellOn ? '' : 'brl'">⠁</span>
+      </button>
 
       <button @click="toggleColorOptions" :class="buttonClass"
         class="rounded-md p-2 text-3xl sm:text-2xl mb-3 mr-0 w-full sm:w-auto">
         <i class="fa-solid fa-caret-down" /> Color Options
       </button>
 
-      <!-- <button @click="toggleDictionary" :class="buttonClass"
+      <button @click="toggleDictionary" :class="buttonClass"
         class="rounded-md p-2 text-3xl sm:text-2xl mb-3 w-full sm:w-auto">
         <i class="fa-solid fa-caret-down" />
         {{ !showDictionary ? "Braille Dictionary" : "Back to Translator" }}
-      </button> -->
+      </button>
 
     </div>
 
@@ -101,16 +102,15 @@ const siteClass = computed(() => {
     </div>
 
     <!-- Dictionary -->
-     <!-- needs proper styling -->
-    <!-- <div v-if="showDictionary">
+    <!-- needs proper styling -->
+    <div v-if="showDictionary">
       <DictionaryComp />
-    </div> -->
+    </div>
 
   </main>
 </template>
 
 <style>
-
 @font-face {
   font-family: BrailleAoe-mMa;
   src: url('./assets/BrailleAoe-mMa.ttf');
@@ -118,10 +118,9 @@ const siteClass = computed(() => {
     url("./assets/BrailleAoe-mMa.ttf") format("truetype");
 }
 
-#cell{
+#cell {
 
   font-family: 'BrailleAoe-mMa', sans-serif;
 
 }
-
 </style>
