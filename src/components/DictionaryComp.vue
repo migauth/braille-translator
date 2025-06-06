@@ -227,71 +227,79 @@ const buttonClass = computed(() => {
 
     <div :class="buttonClass">
 
-      <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
+      <div class="grid grid-cols-2 gap-4 p-4 text-2xl sm:grid-cols-4">
 
         <div>opening round parenthesis</div>
-        <div>closing round parenthesis</div>
-        <div>opening square parenthesis</div>
-        <div>closing square parenthesis</div>
-
         <div :class="!cellOn ? '' : 'brl'">⠐⠣</div>
+        <div>closing round parenthesis</div>
         <div :class="!cellOn ? '' : 'brl'">⠐⠜</div>
+        <div>opening square parenthesis</div>
         <div :class="!cellOn ? '' : 'brl'">⠨⠣</div>
+        <div>closing square parenthesis</div>
         <div :class="!cellOn ? '' : 'brl'">⠨⠜</div>
 
-        <div>opening curly parenthesis</div>
-        <div>closing curly parenthesis</div>
-        <div>opening angle parenthesis</div>
-        <div>closing angle parenthesis</div>
 
+        <div>opening curly parenthesis</div>
         <div :class="!cellOn ? '' : 'brl'">⠸⠣</div>
+        <div>closing curly parenthesis</div>
         <div :class="!cellOn ? '' : 'brl'">⠸⠜</div>
+        <div>opening angle parenthesis</div>
         <div :class="!cellOn ? '' : 'brl'">⠈⠣</div>
+        <div>closing angle parenthesis</div>
         <div :class="!cellOn ? '' : 'brl'">⠈⠜</div>
+
 
       </div>
 
     </div>
+
     <p class="p-4 text-4xl">Signs of Operations and Comparison</p>
-    <div class="grid grid-cols-4 gap-4 p-4 text-3xl ">
-      <div>plus +</div>
-      <div>minus -</div>
-      <div>multiplication x</div>
-      <div>multiplication dot</div>
 
-      <div :class="!cellOn ? '' : 'brl'">⠐⠖</div>
-      <div :class="!cellOn ? '' : 'brl'">⠐⠤</div>
-      <div :class="!cellOn ? '' : 'brl'">⠐⠦</div>
-      <div :class="!cellOn ? '' : 'brl'">⠐⠲</div>
+    <div :class="buttonClass">
+      <div class="grid grid-cols-2 gap-4 p-4 text-2xl sm:grid-cols-4">
 
-      <div>division</div>
-      <div>greater than</div>
-      <div>less than</div>
-      <div>equals</div>
+        <div>plus +</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠖</div>
+        <div>minus -</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠤</div>
+        <div>multiplication x</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠦</div>
+        <div>multiplication dot</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠲</div>
 
-      <div :class="!cellOn ? '' : 'brl'">⠐⠌</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠜</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠣</div>
-      <div :class="!cellOn ? '' : 'brl'">⠐⠶</div>
 
+        <div>division</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠌</div>
+        <div>greater than</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠜</div>
+        <div>less than</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠣</div>
+        <div>equals</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠶</div>
+
+      </div>
     </div>
+
     <p class="p-4 text-4xl">Currency and Measurement</p>
-    <div class="grid grid-cols-3 gap-4 p-4 text-3xl ">
-      <div>cent</div>
-      <div>dollar</div>
-      <div>euro</div>
 
-      <div :class="!cellOn ? '' : 'brl'">⠈⠉</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠎</div>
-      <div :class="!cellOn ? '' : 'brl'">⠈⠑</div>
+    <div :class="buttonClass">
+      <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
+        <div>cent</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠉</div>
+        <div>dollar</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠎</div>
+        <div>euro</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠑</div>
 
-      <div>British Pound</div>
-      <div>feet</div>
-      <div>inches</div>
 
-      <div :class="!cellOn ? '' : 'brl'">⠐⠖</div>
-      <div :class="!cellOn ? '' : 'brl'">⠐⠤</div>
-      <div :class="!cellOn ? '' : 'brl'">⠐⠲</div>
+        <div>British Pound</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠖</div>
+        <div>feet</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠤</div>
+        <div>inches</div>
+        <div :class="!cellOn ? '' : 'brl'">⠐⠲</div>
+
+      </div>
     </div>
   </div>
 </template>
