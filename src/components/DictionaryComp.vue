@@ -103,9 +103,8 @@ const buttonClass = computed(() => {
 
     <div :class="buttonClass">
 
-      <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
-        <div>Numeric</div>
-        <div></div>
+      <div class="grid grid-cols-2 gap-4 p-4 text-4xl ">
+        <div class="text-2xl sm:text-4xl">Numeric</div>
         <div :class="!cellOn ? '' : 'brl'">⠼</div>
       </div>
 
