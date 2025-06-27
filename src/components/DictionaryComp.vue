@@ -301,6 +301,26 @@ const buttonClass = computed(() => {
 
       </div>
     </div>
+
+    <p class="p-4 text-4xl">Special Symbols</p>
+
+    <div :class="buttonClass">
+      <div class="grid grid-cols-2 gap-4 p-4 text-3xl ">
+        <div>percent</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠉</div>
+        <div>dollar</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠎</div>
+        <div>euro</div>
+        <div :class="!cellOn ? '' : 'brl'">⠈⠑</div>
+
+
+        
+
+      </div>
+
+
+
+    </div>
   </div>
 </template>
 
